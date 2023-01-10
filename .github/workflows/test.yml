@@ -1,0 +1,15 @@
+name: workflow-test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  do_it:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run script file
+        run: |
+          chmod +x ./myscript.sh
+          ./myscript.sh
+        shell: bash 
